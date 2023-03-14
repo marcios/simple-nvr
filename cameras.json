@@ -1,6 +1,6 @@
 [
     {
         "name": "example-camera-name",
-        "url": "rtsp://192.168.255.255:554/11"
+        "url": "rtsp://admin:123456@192.168.0.101:8554/profile1"
     }
 ]
