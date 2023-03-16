@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+  cam-server:
+    image: nvr/cam-server:${TAG:-latest}
+    build: 
+      context: .
+      dockerfile: Dockerfile_Server
+    environment:
+      - VERSAO=1
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./save-videos:/home/node/app/save-videos
+    restart: always
+
+  cam-client:
+    build: 
+      context: .
+      dockerfile: Dockerfile_Client
+    environment:
+      - VERSAO=1
+    volumes:
+      - ./save-videos:/home/node/app/save-videos
+    ports:
+      - "3000:3000"
+    restart: always
+
+    depends_on:
+      - cam-server
+    
