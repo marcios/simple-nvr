@@ -1,0 +1,7 @@
+Criar uma conta no console do google e habilitar api de google drive
+
+Crontab para mover arquivos para o google com o programa rclone
+*5 * * * * bash /home/pi/google-bkp.sh >> /home/pi/logs/cron-log.txt
+
+Crontab para remover arquivos dos dias anteriores sempre as 0h
+0 0 * * * bash /home/pi/google-bkp.sh >> /home/pi/logs/cron-log.txt
